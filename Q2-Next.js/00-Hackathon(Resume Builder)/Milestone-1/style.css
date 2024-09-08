@@ -105,9 +105,17 @@ body {
     margin-top: 30px;
 }
 
-@media (max-width: 570px){
+@media (max-width: 400px){
+    .header {
+        height: 150px;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+    }
     .content{
-        width: 380px;
+        width: 300px;
     }
     .pInfo-phone, .pInfo-email{
         display: none;
@@ -118,7 +126,28 @@ body {
     }
 }
 
-@media (max-width: 700px) {
+@media (min-width:401px) and (max-width: 570px){
+    .header {
+        height: 150px;
+    }
+    .content{
+        width: 380px;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+    }
+    .pInfo-phone, .pInfo-email{
+        display: none;
+    }
+    .pInfo{
+        display: flex;
+        column-gap: 0;
+    }
+}
+
+@media (min-width:571px) and (max-width: 700px) {
     .header {
         height: 150px;
     }
