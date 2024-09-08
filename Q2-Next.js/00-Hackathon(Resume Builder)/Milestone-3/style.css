@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(250, 226, 226);
+}
+
+.header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: black;
+}
+
+#nav-links-btn-PI, #nav-links-btn-ED,#nav-links-btn-SK,#nav-links-btn-WE {
+    border: none;
+    height: 30px;
+    background-color: black;
+    font-size: medium;
+}
+
+.personal-info,
+.edu,
+.skills,
+.exp {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.personal-info:hover,
+.edu:hover,
+.skills:hover,
+.exp:hover {
+    cursor: pointer;
+    background-color: rgb(252, 252, 107);
+    color: black;
+    border-radius: 5px;
+    transition: ease-out 0.5s;
+    font-weight: bold;
+}
+
+/* COntent */
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    width: 900px;
+    margin-top: 20px;
+
+    /* border-color: black;
+    border-style: dotted; */
+}
+
+.inner-content {
+    font-size: large;
+}
+.pInfo{
+    display: flex;
+    justify-content: center;
+    column-gap: 150px;
+    position: relative;
+
+}
+.pInfo-name {
+    font-size: 50px;
+    font-weight: bold;
+    
+}
+.pInfo-phone{
+    position: absolute;
+    z-index: 999;
+    margin-top: 120px;
+    margin-right: 600px;
+}
+.pInfo-email{
+    position: absolute;
+    z-index: 999;
+    margin-top: 120px;
+    margin-left: auton;
+}
+
+.profilePicture {
+    height: 150px;
+    width: 150px;
+    border-radius: 70px;
+    margin-top: 10px;
+}
+
+.education{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.skills-div{
+    margin-top: 30px;
+}
+.w-exp{
+    margin-top: 30px;
+}
+
+@media (max-width: 400px){
+    .header {
+        height: 150px;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+    }
+    .content{
+        width: 300px;
+    }
+    .pInfo-phone, .pInfo-email{
+        display: none;
+    }
+    .pInfo{
+        display: flex;
+        column-gap: 0;
+    }
+}
+
+@media (min-width:401px) and (max-width: 570px){
+    .header {
+        height: 150px;
+    }
+    .content{
+        width: 380px;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+    }
+    .pInfo-phone, .pInfo-email{
+        display: none;
+    }
+    .pInfo{
+        display: flex;
+        column-gap: 0;
+    }
+}
+
+@media (min-width:571px) and (max-width: 700px) {
+    .header {
+        height: 150px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3px;
+    }
+    .pInfo-phone, .pInfo-email{
+        display: none;
+    }
+    .content{
+        width: 500px;
+    }
+}
+
+@media (min-width: 701px) and (max-width:1080px){
+    .content{
+        width: 800px;
+    }
+}
+
