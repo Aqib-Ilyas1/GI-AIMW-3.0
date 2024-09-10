@@ -30,3 +30,57 @@ workExperience.addEventListener('click', function () {
     SK.style.display = 'none';
     WE.style.display = 'flex';
 });
+
+
+
+// Retrive data from FORM to FRONT
+
+let formName = document.getElementById('formInputName');
+let formPhone = document.getElementById('formInputPhone')
+let formEmail = document.getElementById('formInputEmail')
+let formEducation = document.getElementById('formEducation');
+let formSkillsFirst = document.getElementById('formSkillsFirst')
+let formSkillsSecond = document.getElementById('formSkillsSecond')
+let formSkillsThird = document.getElementById('formSkillsThird')
+
+let formWexp = document.getElementById('formWexp')
+
+let contentPersonalInfo = document.getElementById('pInfo')
+
+
+
+function showResume() {
+    let contentEducation = document.getElementById('education')
+    let contentSkills = document.getElementById('skills-div')
+    let contentWexp = document.getElementById('w-exp')
+
+    if (formName.value && formPhone.value && formEmail.value && formEducation.value && formSkillsFirst.value && formWexp.value) {
+        contentPersonalInfo.innerHTML = `
+
+        <p class="pInfo-name">${formName.value}</p>
+        <p class="pInfo-phone">${formPhone.value}</p>
+        <p class="pInfo-email">${formEmail.value}</p>`
+
+        contentEducation.innerHTML = `<h3 style="text-decoration: underline;">EDUACTION</h3>
+        <p>${formEducation.value}</p>`
+
+        contentSkills.innerHTML = `<h3 style="display: flex; justify-content: center; text-decoration: underline;">SKILLS</h3>
+        <ul>
+            <li> ${formSkillsFirst.value}</li>
+            <li> ${formSkillsSecond.value}</li>
+            <li>${formSkillsThird.value}</li>
+        </ul>`
+
+        contentWexp.innerHTML = `<h3 style="text-decoration: underline; display: flex; justify-content: center;">WORK EXPERIENCE</h3>
+        <p> ${formWexp.value}</p>`
+
+
+    } else if (formName.value == "" || formPhone.value == "" || formEmail.value == "" || formEducation.value == "" || formSkillsFirst.value == "" || formWexp.value == "") {
+        alert("Enter all the feilds")
+
+    } else {
+        console.log("else")
+    }
+}
+
+
