@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestone 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="nav-sidebar" id="nav-sidebar">
+        <div class="nav-container">
+
+            <form  id="form">
+                <fieldset>
+                    <legend style="font-size: x-large;">Personal Information</legend>
+                    <label for="name" style="font-size: large;">Name:</label> <br>
+                    <input type="text" name="name" id="formInputName" required> <br> <br>
+                    <label for="phone" style="font-size: large;">Phone No.</label> <br>
+                    <input type="tel" name="phone" id="formInputPhone" required> <br> <br>
+                    <label for="email" style="font-size: large;">Email</label> <br>
+                    <input type="email" name="email" id="formInputEmail" required /> <br> <br>
+                </fieldset>
+
+                <fieldset>
+                    <legend style="font-size: x-large;">Education</legend>
+                    <textarea name="education-form" id="formEducation" rows="4"></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend style="font-size: x-large;">Skills</legend>
+                    <input type="text" placeholder="First" id="formSkillsFirst">
+                    <input type="text" placeholder="Second" id="formSkillsSecond">
+                    <input type="text" placeholder="Third" id="formSkillsThird">
+
+                </fieldset>
+
+                <fieldset>
+                    <legend style="font-size: x-large;">Work Experience</legend>
+                    <textarea name="wexp-form" id="formWexp" rows="4"></textarea>
+                </fieldset>
+            </form> <br>
+            <button id="showResume" onclick="showResume()">Show</button>
+            <button id="editResume" onclick="editResume(event)">Edit</button>
+
+
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="nav-links">
+
+
+            <button id="nav-links-btn-PI" class="al"><a href="#" class="personal-info">Personal
+                    Information</a></button>
+            <button id="nav-links-btn-ED"><a href="#" class="edu">Education</a></button>
+            <button id="nav-links-btn-SK"><a href="#" class="skills">Skills</a></button>
+            <button id="nav-links-btn-WE"><a href="#" class="exp">Work Experience </a></button>
+
+        </div>
+    </div>
+
+    <div class="content" id="content">
+        <div class="inner-content">
+            <div class="pInfo" id="pInfo">
+
+            </div>
+            <div class="education" id="education">
+
+            </div>
+
+            <div class="skills-div" id="skills-div">
+
+            </div>
+
+            <div class="w-exp" id="w-exp">
+
+            </div>
+
+           
+
+        </div>
+    </div>
+
+    <div id="save-download-link-btns">
+        <!-- <button id="saveBtn">Save</button> -->
+        <!-- <button id="shareableLinkBtn">Copy Shareable Link</button> -->
+        <!-- <button id="downloadBtn">Download Resume</button> -->
+        <a id="shareable-link-anchor" href="#" target="_blank" style="display: none;">View Shareable Resume</a>
+    </div>
+
+
+
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+</body>
+
+</html>
