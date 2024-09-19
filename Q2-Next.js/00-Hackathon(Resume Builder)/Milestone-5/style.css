@@ -113,35 +113,23 @@ form> fieldset{
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    /* margin-left: 450px; */
 }
 
 .inner-content {
     font-size: large;
 }
-.pInfo{
-    display: flex;
-    justify-content: center;
-    column-gap: 150px;
-    position: relative;
 
-}
 .pInfo-name {
     font-size: 50px;
     font-weight: bold;
-    
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
 }
-.pInfo-phone{
-    position: absolute;
-    z-index: 999;
-    margin-top: 120px;
-    margin-right: 600px;
-}
-.pInfo-email{
-    position: absolute;
-    z-index: 999;
-    margin-top: 120px;
-    margin-left: auton;
+
+.pInfo-phone, .pInfo-email{
+    display: flex;
+    flex-direction: column;
 }
 
 .profilePicture {
@@ -178,22 +166,12 @@ form> fieldset{
     .content{
         width: 300px;
     }
-    .pInfo-phone, .pInfo-email{
-        display: none;
-    }
-    .pInfo{
-        display: flex;
-        column-gap: 0;
-    }
+
     .content{
-        width: 365px;
-        position: absolute;
-        z-index: 999;
-        margin-top: 900px;
-        margin-left: auto;
+        width: 350px;
     }
     .nav-sidebar{
-        width: 350px;
+        width: 300px;
         background-color: rgb(231, 210, 210);
         position: absolute;
         margin-top: 153px;
@@ -205,7 +183,13 @@ form> fieldset{
         margin-left: 0px;
         margin-top: 40px;
     }
-    
+    #saveBtn{
+        margin-top: 650px;
+    }
+    #shareableLinkBtn{
+        margin-top: 150px;
+        margin-bottom: 10px;
+    }
 }
 
 @media (min-width:401px) and (max-width: 570px){
@@ -220,19 +204,8 @@ form> fieldset{
         flex-direction: column;
         row-gap: 3px;
     }
-    .pInfo-phone, .pInfo-email{
-        display: none;
-    }
-    .pInfo{
-        display: flex;
-        column-gap: 0;
-    }
     .content{
-        width: 450px;
-        position: absolute;
-        z-index: 999;
-        margin-top: 900px;
-        margin-left: auto;
+        width: 350px;
     }
     .nav-sidebar{
         width: 400px;
@@ -247,10 +220,17 @@ form> fieldset{
         margin-left: 0px;
         margin-top: 40px;
     }
-    
+    #saveBtn{
+        margin-top: 650px;
+    }
+    #shareableLinkBtn{
+        margin-top: 250px;
+        margin-bottom: 10px;
+    }
 }
 
 @media (min-width:571px) and (max-width: 700px) {
+    
     .header {
         height: 150px;
     }
@@ -261,14 +241,15 @@ form> fieldset{
         row-gap: 3px;
     }
     .pInfo-phone, .pInfo-email{
-        display: none;
+        display: flex;
+        flex-direction: column;
     }
     .content{
         width: 650px;
         position: absolute;
         z-index: 999;
-        margin-top: 900px;
         margin-left: auto;
+        margin-bottom: 500px;
     }
     .nav-sidebar{
         width: 500px;
@@ -291,6 +272,13 @@ form> fieldset{
         margin-left: 0px;
         margin-top: 40px;
     }
+    #saveBtn{
+        margin-top: 650px;
+    }
+    #shareableLinkBtn{
+        margin-top: 650px;
+        margin-bottom: 10px;
+    }
     
 }
 
@@ -299,11 +287,10 @@ form> fieldset{
         width: 800px;
     }
     .content{
-        width: 650px;
-        position: absolute;
+        width: 700px;
+        /* position: absolute;
         z-index: 999;
-        margin-top: 900px;
-        margin-left: auto;
+        margin-left: auto; */
         display: flex;
         justify-content: center;
     }
@@ -319,6 +306,10 @@ form> fieldset{
         position: absolute;
         margin-left: 0px;
         margin-top: 40px;
+    }
+    #shareableLinkBtn{
+        margin-top: 150px;
+        margin-bottom: 10px;
     }
 }
 @media (min-width: 1081px) and (max-width: 1340){
@@ -336,5 +327,6 @@ form> fieldset{
         margin-top: 153px;
         height: 800px;
     }
+    
 }
 

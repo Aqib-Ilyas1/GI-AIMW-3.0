@@ -33,7 +33,7 @@ workExperience.addEventListener('click', function () {
 
 
 
-// Retrive data from FORM to FRONT
+// Retrive data from FORM to DOM
 
 let formName = document.getElementById('formInputName');
 let formPhone = document.getElementById('formInputPhone')
@@ -71,7 +71,7 @@ function showResume() {
         <ul>
             <li> ${formSkillsFirst.value}</li>
             <li> ${formSkillsSecond.value}</li>
-            <licontentEditable="true">${formSkillsThird.value}</li>
+            <li>${formSkillsThird.value}</li>
         </ul>`
 
         contentWexp.innerHTML = `<h3 style="text-decoration: underline; display: flex; justify-content: center;">WORK EXPERIENCE</h3>
@@ -103,8 +103,6 @@ function editResume(event) {
 
     let saveDownloadLinkBtns = document.getElementById('save-download-link-btns')
 
-
-
     if (event.target.id === 'editResume') {
         console.log("EDIT btn")
 
@@ -129,31 +127,38 @@ function editResume(event) {
 
         saveDownloadLinkBtns.innerHTML = `<button id="saveBtn">Save</button>`
 
-        document.getElementById('saveBtn').addEventListener('click', () => {
-            console.log("SAVEBTN")
+        // Save button
 
-            contentPersonalInfo.innerHTML = `
+        document.getElementById('saveBtn').addEventListener('click', () => {
+         console.log("SAVEBTN")
+
+        contentPersonalInfo.innerHTML = `
 
         <p class="pInfo-name">${formName.value}</p>
         <p class="pInfo-phone">${formPhone.value}</p>
         <p class="pInfo-email">${formEmail.value}</p>`
 
-            contentEducation.innerHTML = `<h3 style="text-decoration: underline;">EDUCATION</h3>
-        <p>${formEducation.value}</p>`
+        contentEducation.innerHTML = `<h3 style="text-decoration: underline;">EDUCATION</h3> <p>${formEducation.value}</p>`
 
-            contentSkills.innerHTML = `<h3 style="display: flex; justify-content: center; text-decoration: underline;">SKILLS</h3>
-        <ul>
-            <li> ${formSkillsFirst.value}</li>
-            <li> ${formSkillsSecond.value}</li>
-            <li>${formSkillsThird.value}</li>
-        </ul>`
+        contentSkills.innerHTML = `<h3 style="display: flex; justify-content: center; text-decoration: underline;">SKILLS</h3>
+            <ul>
+                <li> ${formSkillsFirst.value}</li>
+                <li> ${formSkillsSecond.value}</li>
+                <li>${formSkillsThird.value}</li>
+            </ul>`
 
-            contentWexp.innerHTML = `<h3 style="text-decoration: underline; display: flex; justify-content: center;">WORK EXPERIENCE</h3>
-        <p> ${formWexp.value}</p>`
+        contentWexp.innerHTML = `<h3 style="text-decoration: underline; display: flex; justify-content: center;">WORK EXPERIENCE</h3> <p> ${formWexp.value}</p>`
 
-            saveDownloadLinkBtns.innerHTML = ` <button id="shareableLinkBtn" onclick="shareableLink()" style= "display: inline-block">Copy Shareable Link</button> 
-            <button id="downloadBtn" onclick="downloadResume()">Download Resume</button>
-            <a id="shareable-link-anchor" href="./Resume.html" target="_blank" style= "display: none;">View Shareable Resume</a>`;
+        localStorage.setItem('object',JSON.stringify({Name : formName.value, Phone : formName.value, Email: formEmail.value,Education:formEducation.value,  Skill1:formSkillsFirst.value, Skill2: formSkillsSecond.value, SKill3: formSkillsThird.value, WExp: formWexp.value}))
+        // const formNameStorage = localStorage.setItem("Name", formName.value)
+        // const formPhoneStorage = localStorage.setItem("Phone", formPhone.value)
+        // const formEmailStorage = localStorage.setItem("Email", formEmail.value)
+        // const formEducationStorage = localStorage.setItem("Education",formEducation.value)
+
+
+        saveDownloadLinkBtns.innerHTML = `<button id="shareableLinkBtn" onclick="shareableLink()" style= "display: inline-block">Shareable Link</button> 
+        <button id="downloadBtn" onclick="downloadResume()">Download Resume</button>
+        <a id="shareable-link-anchor" href="./resume-viewer.html" target="_blank" style= "display: none;"></a>`;
         })
 
     }
